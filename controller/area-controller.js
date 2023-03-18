@@ -21,6 +21,15 @@ class AreaController {
         }
     }
 
+    async uploadImagesById(req, res) {
+        try {
+            await UploadImageService.uploadImageById(req.params.id);
+            res.status(200).json("ok");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 
 }
 
