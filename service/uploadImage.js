@@ -86,10 +86,10 @@ class UploadImageService {
                             // upload to s3
                             s3.upload({
                                 Bucket: process.env.AWS_S3_BUCKET_NAME,
-                                Key: imageUrl.split('/').pop(),
+                                Key: `${folderName}/${imageUrl.split('/').pop()}`,
                                 Body: buffer,
                             }).promise().then((data) => {
-                                console.log('File uploaded successfully')
+                                console.log('Violation-File uploaded successfully')
                             })
                         }
                     })
